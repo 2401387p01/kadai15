@@ -4,6 +4,8 @@ $(function() {
     $('#btn').on('click', function(){
 
         //入力データを取得
+        let input_no = $("[name='no']").val();
+        let input_score = $("[name='score']").val();
 
         $.ajax({
             //送信方法
@@ -24,7 +26,6 @@ $(function() {
             //解析データを整形
             // result.messageとresult.timeを改行で結合
             let text = result.no + '\n' + result.score;
-  
             $("#ajax_return").text(text);
 
         }).fail(function(data){
